@@ -17,8 +17,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
-          release_name: "Release ${{ github.sha }}"
+          tag_name: ${{ github.sha.substring(0, 8) }}
+          release_name: "Release ${{ github.sha.substring(0, 8) }}"
           draft: false
           prerelease: false
       - name: Upload zip file as release asset
