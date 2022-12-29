@@ -29,7 +29,7 @@ jobs:
           upload_url: "${{ steps.create_release.outputs.upload_url }}"
           asset_path: chrome-extension.zip
           asset_name: chrome-extension.zip
-          mime_type: application/zip
+          asset_content_type: application/zip
       - name: Add comment with download link
         run: |
           COMMENT="The src folder has been bundled into a zip file and uploaded as a release asset. You can download the file from the [release page](${{ steps.create_release.outputs.html_url }}) of this repository."
