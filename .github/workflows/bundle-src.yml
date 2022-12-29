@@ -39,3 +39,6 @@ jobs:
           if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
             PAYLOAD="{\"body\": \"$COMMENT\"}"
             curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -d "$PAYLOAD" "
+          else
+            echo "$COMMENT"
+          fi
